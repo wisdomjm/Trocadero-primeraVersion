@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <!--ion-title>paginadepago</ion-title-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="vspace"></div>
+  <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
+    <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
+  </div>
+  
+  <h1 class="ion-text-center texto-60" 
+    style="font-weight: 800; font-size: 32px;">
+    Trocadero<span style="font-size: 52px; color: #673BB7;">S</span>hop
+  </h1>
+  <div class="vspace"></div>
+
+  
+  <div id="paypal-buttons"></div>
+  <script>
+    paypal.Buttons().render("body");
+  </script>
+</ion-content>

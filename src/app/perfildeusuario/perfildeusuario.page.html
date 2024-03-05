@@ -1,0 +1,99 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding animate__animated animate__backInDown">
+
+  <div style="display: flex; align-items: center; justify-content: center; margin: 10px auto;">
+    <img src="../../assets/undraw_coffee_re_x35h.svg" alt="" style="width: 60px; height: 60px; object-fit: contain;">
+  </div>
+  <br>
+  <ion-list>
+
+    <ion-input
+      [(ngModel)]="datosUsuario.uid"
+      color="trocadero" 
+      label="Id Vendedor" 
+      label-placement="stacked" 
+      placeholder="" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.nombres"
+      color="trocadero" 
+      label="Nombre" 
+      label-placement="stacked" 
+      placeholder="Nombre" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.apellidos"
+      color="trocadero" 
+      label="Apellidos" 
+      label-placement="stacked" 
+      placeholder="Apellidos" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.direccion"
+      color="trocadero" 
+      label="Direccion" 
+      label-placement="stacked" 
+      placeholder="Direccion" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.email"
+      color="trocadero" 
+      label="Email" 
+      label-placement="stacked" 
+      placeholder="user@email.com" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.telefono"
+      color="trocadero" 
+      label="Telefono" 
+      label-placement="stacked" 
+      placeholder="+57 300 000 0000" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Trocaderoshop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
