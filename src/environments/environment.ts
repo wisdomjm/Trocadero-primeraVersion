@@ -15,13 +15,14 @@ export const environment = {
     measurementId: "G-975QZGWQJB"
   },
   mapToken: "pk.eyJ1IjoidHJvY2FkZXJvc2hvcCIsImEiOiJjbHNwMTlncGcwa3hwMmpueXR4cWdkNXh5In0.pc6c4So_82LgfdoSXJVblw",
-  paypalToken: "AZmjqPRafsfOWIOz_aX9-zyI44cLir1zgxxM2QQO1O9DHDSs7CHIZtD38IfW4YHU8-hKKSfHwzHgUZ2w"
+  paypalToken: "ARMbFIcJYn2oR3dlivpPh6dexJkkmErvauRpBiAoVlevyOzRzxshUYmA8zU7MfDggeGiKOLUXjI1_dzC"
+  
 };
 
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
+ *AZmjqPRafsfOWIOz_aX9-zyI44cLir1zgxxM2QQO1O9DHDSs7CHIZtD38IfW4YHU8-hKKSfHwzHgUZ2w
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */

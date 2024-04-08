@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+
   <div class="vspace"></div>
   <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
     <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
@@ -55,6 +56,36 @@
         <ion-select-option value="Salud y Equipamento Medico">Salud y Equipamento Medico</ion-select-option>
       </ion-select>
     </ion-item>
+
+    <!--
+      Hola Tavito,
+      manito mio, te cuento lo siguiente estuve mirando el documento de las categorias y
+      las implementaciones que piden no son viables para este proyecto...
+      me explico...
+      la aplicacion es una aplicacion de ventas de productos minoritarios que depende de la informacion 
+      que se registra en la vista de AgregarProductos.. esta misma vista...
+      la cuestion es que la estructura de datos depende de muchas ramificaciones,
+      te explico... el chat depende del id del producto y del usuario, los productos cercanos
+      dependen del id del producto y del usuario, la geolocalizacion y el geofence depende de la latitud
+      y longitud del dispositivo y los permisos del mismo...
+
+      cual es el problema...
+
+      veras la categoria de Restaurante, hoteles, alquiler y donaciones
+      regalos, mascotas tienen caracteristicas que de alguna u otra manera afectan el comportamiento
+      de la aplicacion... por ejemplo, el utilizar calendarios para establecer fechas debe ser un proceso a
+      parte, lo mismo que el de los hoteles, el sistema de reserar tu sabes que es diferente al sistema de
+      implementar una app de compras, simplemente porque la estructura de los datos no va a poder
+      realizar los procesos debidamente, esto a la dependencia entre vistas.
+    -->
+
+
+    <!--En caso de seleccionar estas categorias, habilitar estas otras opciones-->
+
+    <!--RESTAURANTES-->
+
+    <!--HOTELES-->
+
 
       
 
@@ -129,7 +160,32 @@
 
      
       <ion-button color="trocadero" expand="block" (click)="subirArchivos()">
-        <i class='bx bxs-cloud-upload' style="font-size: 26px;"></i> Subir
+        <i class='bx bxs-cloud-upload' style="font-size: 26px;"></i> Subir Imagenes
+      </ion-button>
+
+    </div>
+
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+
+    <div>
+
+      <ion-label>Cargar Video</ion-label>
+      <div class="vspace"></div>
+
+      <video width="640" height="240" controls>
+        <source [src]="videoPrevio" type="video/mp4"  preload="metadata" autoplay="autoplay">
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <!--img src="{{videoPrevio}}" *ngIf="videoPrevio != null" alt="" *ngIf="videoPrevio != null" class="imagenAmostrar"-->
+      <br>
+      <input  type="file" (change)="seleccionarVideo($event)" multiple> 
+
+     
+      <ion-button color="trocadero" expand="block" (click)="subirVideo()">
+        <i class='bx bxs-cloud-upload' style="font-size: 26px;"></i> Subir video
       </ion-button>
 
     </div>

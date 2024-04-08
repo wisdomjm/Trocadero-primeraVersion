@@ -16,6 +16,10 @@ export class HistorialPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.idvendedor = localStorage.getItem('userID');
+    //console.log(this.idvendedor);
+
+    this.cargarProductosDelCarrito();
   }
 
   async cargarProductosDelCarrito(){
@@ -24,6 +28,7 @@ export class HistorialPage implements OnInit {
     await this.basedatos.buscarProductosEnHistorialDeCompras(this.idvendedor).subscribe(
       (productos) => {
         this.productosEnHistorial = productos;
+        //console.log("PRODUCTOS EN HISTORIAL: ",this.productosEnHistorial);
       },
       (error) => {
         this.basedatos.MensajeDeVerificacion("Error al cargar los productos");

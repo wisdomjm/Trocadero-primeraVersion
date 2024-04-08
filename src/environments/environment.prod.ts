@@ -10,5 +10,6 @@ export const environment = {
     appId: "1:496141058160:web:f7837139f3c88f1bd5b4b5",
     measurementId: "G-975QZGWQJB"
   },
-  mapToken: "pk.eyJ1IjoidHJvY2FkZXJvc2hvcCIsImEiOiJjbHNwMTlncGcwa3hwMmpueXR4cWdkNXh5In0.pc6c4So_82LgfdoSXJVblw"
+  mapToken: "pk.eyJ1IjoidHJvY2FkZXJvc2hvcCIsImEiOiJjbHNwMTlncGcwa3hwMmpueXR4cWdkNXh5In0.pc6c4So_82LgfdoSXJVblw",
+  paypalToken: "ARMbFIcJYn2oR3dlivpPh6dexJkkmErvauRpBiAoVlevyOzRzxshUYmA8zU7MfDggeGiKOLUXjI1_dzC"
 };

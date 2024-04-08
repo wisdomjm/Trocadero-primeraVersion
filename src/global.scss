@@ -33,7 +33,15 @@
     --highlight-color: #673BB7 !important;
 }
 
+ion-loading.custom-loading {
+    --background: #e3edff;
+    --spinner-color: #8556db;  
+    color: #fff;
+}
 
+.trocacolor{
+    color: #673BB7 !important;
+}
 
 ion-input{
     --border-color: #673BB7 !important;

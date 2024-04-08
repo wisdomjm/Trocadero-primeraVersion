@@ -34,7 +34,7 @@
           <h4 
             style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 200;">
             <i class='bx bx-store'></i> 
-            <span style="margin-top: -16px;"><ion-chip color="trocadero">Actualizar</ion-chip></span>
+            <span style="margin-top: -16px;"><ion-chip color="trocadero" [routerLink]="['/editarproductos',producto.nombre, producto.uuid]">Actualizar</ion-chip></span>
           </h4>
         </ion-col>
 

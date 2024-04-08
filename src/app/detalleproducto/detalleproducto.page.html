@@ -4,6 +4,7 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>{{productoEncontrado.nombre}}</ion-title>
+    <i class='bx bx-message-rounded-dots' slot="end" style="font-size: 18px; margin-right: 16px;" [routerLink]="['/enviarmensajealvendedor',productoEncontrado.idVendedor]"></i>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +12,10 @@
   <div class="image_product animate__animated animate__backInLeft animate__delay-2s" style="border-radius: 8px 8px 8px 8px;">
     <img src="{{imagenProductoPrincipal}}" alt="">
   </div>
-  <br>
+
+  <!--REPRODUCTOR DE VIDEO NO TOCAR!!!!!-->
+  <video controls [src]="videoPrincipal" type="video/mp4" width="100%" height="240" loop autoplay> </video>
+
   <swiper-container [slidesPerView]="3.5" [spaceBetween]="20">
     <swiper-slide *ngFor="let imagen of todaslasimagenes" (click)="CambiarImagenAMostrar(imagen)">
       <div style="width: 80px; height: 80px;">
@@ -28,10 +32,10 @@
   <p class="comentarios-producto">
     <ion-icon name="star-half" color="trocadero"></ion-icon> <span> 4.7 (120 comentarios)</span>
 
-    <ion-chip [outline]="true" color="medium">
+    <!--ion-chip [outline]="true" color="medium">
       <ion-icon name="location-outline"></ion-icon>
       <ion-label>ver Mapa</ion-label>
-    </ion-chip>
+    </ion-chip-->
 
   </p>
 
@@ -54,7 +58,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <ion-button color="trocadero" expand="block" style="font-size: 10px;" routerLink="/paginadepago">
+        <ion-button color="trocadero" expand="block" style="font-size: 10px;" (click)="Comprar()">
           Comprar Ahora
         </ion-button>
       </ion-col>
@@ -78,11 +82,11 @@
 
   <!--preguntar al vendedor-->
   <ion-item lines="none">
-    <ion-textarea  label="Preguntar" labelPlacement="stacked" placeholder="Pregunta la Vendedor" [counter]="true"
+    <ion-textarea  label="Dejar un Comentario" labelPlacement="stacked" placeholder="Comentar..." [counter]="true"
       maxlength="250" [autoGrow]="true" [(ngModel)]="pregunta.mipregunta"></ion-textarea>
   </ion-item>
   <br>
-  <ion-button color="trocadero" expand="block" (click)="EnviarPregunta()">Preguntar</ion-button>
+  <ion-button color="trocadero" expand="block" (click)="EnviarPregunta()">Comentar</ion-button>
 
   <br>
   <!--Ultimas Preguntas-->

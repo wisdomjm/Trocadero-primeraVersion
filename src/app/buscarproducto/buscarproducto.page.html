@@ -16,11 +16,11 @@
   </ion-searchbar>
 
   <ion-list lines="none">
-    <ion-grid *ngFor="let producto of productosEncontrados" routerLink="/detalleproducto" class="box-shadow">
+    <ion-grid *ngFor="let producto of productosEncontrados" [routerLink]="['/detalleproducto',producto.nombre, producto.idVendedor]" class="box-shadow">
       <ion-row>
         <ion-col size="3">
-          <img alt="Silhouette of mountains" 
-            src="https://ionicframework.com/docs/img/demos/thumbnail.svg" 
+          <img alt="" 
+            src="{{producto.imagenes[0]}}" 
             style="width: 72px; height: 80px; object-fit: cover; border-radius: 8px 8px 8px 8px;"  
           />
         </ion-col>

@@ -34,11 +34,12 @@
       label="Password" 
       label-placement="stacked" 
       placeholder="******" 
-      type="password" 
+      type="{{ mostrarContrasena ? 'text' : 'password' }}" 
       fill="outline"
       [(ngModel)]="mipassword"
       >
       <i class='bx bx-lock-open' slot="start"></i>
+      <ion-icon name="eye" (click)="mostrarContrasena = !mostrarContrasena" slot="end"></ion-icon>
     </ion-input>
 
 

@@ -1,7 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-//import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
@@ -44,18 +43,15 @@ export class AutenticacionService {
     return this.afAuth.signInWithEmailAndPassword(email, password).then((result) => {
         
         this.userID = result.user?.uid;
-        console.log("INICIO SESION: ",this.userID);
         localStorage.setItem('userID', this.userID);
         localStorage.setItem('emailUser',email);
-        this.SetUserData(result.user);
+
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            //this.router.navigate(['tiendaprincipal']);
             this.MensajeDeVerificacion("Bienvenido.");
           }
         });
       }).catch((error) => {
-        //window.alert(error.message);
         this.MensajeDeVerificacion("Error, al Registrar tu Email y Contraseña.");
     });
   }
@@ -99,9 +95,7 @@ export class AutenticacionService {
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
-  /* Setting up user data when sign in with username/password, 
-  sign up with username/password and sign in with social auth  
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `UsuariosTrocadero/${user.uid}`
@@ -117,7 +111,8 @@ export class AutenticacionService {
       direccion:'',
       telefono:'',
       pais:'',
-      tienda:''
+      tienda:'',
+      listaDeContactos:{}
     };
     return userRef.set(userData, {
       merge: true,
@@ -134,6 +129,10 @@ export class AutenticacionService {
 
   GetUserData(UserId: any): Observable<any[]> {
     return this.afs.collection('UsuariosTrocadero', ref => ref.where('email', '==', UserId)).valueChanges();
+  }
+
+  async actualizarDatosUsuario(userId:any, nuevosDatos: any): Promise<void> { 
+    return this.afs.collection('UsuariosTrocadero').doc(userId).update(nuevosDatos);
   }
 
   async MensajeDeVerificacion(msg:any) {

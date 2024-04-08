@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -29,6 +30,6 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": false
   }
 }

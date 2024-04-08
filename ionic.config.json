@@ -1,7 +1,8 @@
 {
   "name": "Trocaderoshop",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

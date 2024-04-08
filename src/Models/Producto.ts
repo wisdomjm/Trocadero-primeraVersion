@@ -1,4 +1,5 @@
 export default interface Producto{
+    uuid?:string,
     nombre?:string,
     descripcionCorta?:string,
     descripcionLarga?:string, 
@@ -6,6 +7,12 @@ export default interface Producto{
     precio?:number,
     cantidadDisponible?:number,
     idVendedor?:string,
+    emailVendedor?:string,
     fechaCreacion?:string,
-    imagenes?:{}
+    imagenes?:{},
+    video?:{},
+    latitude?:string,
+    longitude?:string,
+    carritoClienteId?:string,
+    historialClienteId?:string
 }

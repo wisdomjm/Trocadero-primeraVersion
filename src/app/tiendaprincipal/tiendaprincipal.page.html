@@ -5,7 +5,8 @@
     </ion-buttons>
     <ion-title>TrocaderoShop</ion-title>
     <i class='bx bx-search-alt' slot="end" style="font-size: 18px; margin-right: 16px;" routerLink="/buscarproducto"></i>
-    <i class='bx bxs-shopping-bags' slot="end" style="font-size: 18px; margin-right: 16px;" routerLink="/carritodecompras"></i>
+    <!--i class='bx bxs-shopping-bags' slot="end" style="font-size: 18px; margin-right: 16px;" routerLink="/carritodecompras"></i-->
+    <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 42px; height: 42px;" slot="end" routerLink="/carritodecompras">
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +15,17 @@
   <!--CATEGORIAS-->
   <ion-label>Categorias</ion-label>
   <swiper-container [slidesPerView]="3.5" [spaceBetween]="10">
-    <swiper-slide *ngFor="let categoria of categorias" (click)="FiltrarPorCategoria(categoria.nombre)">
-      <h2 class="items-categoria">{{categoria.nombre}}</h2>
+    <swiper-slide *ngFor="let categoria of categorias" (click)="FiltrarPorCategoria(categoria.nombre)">       
+        <h2 class="items-categoria">
+          <span>
+            <img src="{{categoria.imagen}}" alt="" slot="start" style="width: 22px; height: 22px; margin-right: 16px;">
+          </span>
+          {{categoria.nombre}}
+        </h2>
     </swiper-slide>
   </swiper-container>
+
+
 
   <div class="vspace"></div> <!--espacio de 24px de alto-->
   <swiper-container [slidesPerView]="3.5" [spaceBetween]="50">
@@ -33,6 +41,9 @@
   <div class="vspace"></div> <!--espacio de 24px de alto-->
   <ion-label>Productos Disponibles</ion-label>
   
+  <!--h1 class="ion-text-center trocacolor" *ngIf="sinProductos === true">
+    Aun no hay Productos Registrados
+  </h1-->
 
   <ion-list lines="none">
     <ion-grid *ngFor="let producto of todosLosProductos" [routerLink]="['/detalleproducto',producto.nombre, producto.idVendedor]" class="box-shadow">
@@ -64,3 +75,5 @@
   <!--ion-button routerLink="/agregarproducto" expand="block" mode="ios">Agregar Producto</ion-button-->
 
 </ion-content>
+
+

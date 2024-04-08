@@ -60,7 +60,7 @@ const routes: Routes = [
     loadChildren: () => import('./mensajes/mensajes.module').then( m => m.MensajesPageModule)
   },
   {
-    path: 'continuarregistro',
+    path: 'continuarregistro/:email',
     loadChildren: () => import('./continuarregistro/continuarregistro.module').then( m => m.ContinuarregistroPageModule)
   },
   {
@@ -72,12 +72,24 @@ const routes: Routes = [
     loadChildren: () => import('./misproductos/misproductos.module').then( m => m.MisproductosPageModule)
   },
   {
-    path: 'paginadepago',
+    path: 'paginadepago/:nombreProducto/:idVendedor/:precio/:cantidad/:descripcion/:imagen',
     loadChildren: () => import('./paginadepago/paginadepago.module').then( m => m.PaginadepagoPageModule)
   },
   {
     path: 'historial',
     loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
+  },
+  {
+    path: 'enviarmensajealvendedor/:userid',
+    loadChildren: () => import('./enviarmensajealvendedor/enviarmensajealvendedor.module').then( m => m.EnviarmensajealvendedorPageModule)
+  },
+  {
+    path: 'mapaprincipal',
+    loadChildren: () => import('./mapaprincipal/mapaprincipal.module').then( m => m.MapaprincipalPageModule)
+  },
+  {
+    path: 'editarproductos/:nombreProducto/:idProducto',
+    loadChildren: () => import('./editarproductos/editarproductos.module').then( m => m.EditarproductosPageModule)
   },
 ];
 
